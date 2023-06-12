@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Aston_Final_Project</string>
+    <string name="сharacters">Сharacters</string>
+    <string name="locations">Locations</string>
+    <string name="episodes">Episodes</string>
+    <string name="char_name">Char name</string>
+    <string name="char_species">Char species</string>
+    <string name="char_status">Char status</string>
+    <string name="char_gender">Char gender</string>
+    <string name="char_id">1</string>
+    <string name="choose_a_section">Choose a section</string>
+    <string name="search">Search</string>
+
+    <string name="name">По имени</string>
+    <string name="status">По статусу</string>
+    <string name="species">По особенностям</string>
+    <string name="type">По типу</string>
+    <string name="gender">По гендеру</string>
+    <string name="dimension">По направлению</string>
+    <string name="episode">По названию эпизода</string>
+
+</resources>
