@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Aston_Final_Project</string>
+    <string name="сharacters">Сharacters</string>
+    <string name="locations">Locations</string>
+    <string name="episodes">Episodes</string>
+    <string name="char_name">Char name</string>
+    <string name="char_species">Char species</string>
+    <string name="char_status">Char status</string>
+    <string name="char_gender">Char gender</string>
+    <string name="char_id">1</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="choose_a_section">Choose a section</string>
+    <!-- TODO: Remove or change this placeholder text -->
+</resources>

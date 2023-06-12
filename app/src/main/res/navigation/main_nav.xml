@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/mainFragment4">
+    <fragment
+        android:id="@+id/charactersFragment"
+        android:name="com.kipreev.aston_final_project.fragments.CharactersFragment"
+        android:label="fragment_characters"
+        tools:layout="@layout/fragment_characters" >
+        <action
+            android:id="@+id/action_charactersFragment2_to_characterInfo2"
+            app:destination="@id/characterInfo2" />
+    </fragment>
+    <fragment
+        android:id="@+id/episodeInfo3"
+        android:name="com.kipreev.aston_final_project.fragments.EpisodeInfo"
+        android:label="fragment_episode_info"
+        tools:layout="@layout/fragment_episode_info" />
+    <fragment
+        android:id="@+id/characterInfo2"
+        android:name="com.kipreev.aston_final_project.fragments.CharacterInfo"
+        android:label="fragment_character_info"
+        tools:layout="@layout/fragment_character_info" />
+    <fragment
+        android:id="@+id/episodesFragment"
+        android:name="com.kipreev.aston_final_project.fragments.EpisodesFragment"
+        android:label="fragment_episodes"
+        tools:layout="@layout/fragment_episodes" >
+        <action
+            android:id="@+id/action_episodesFragment2_to_episodeInfo3"
+            app:destination="@id/episodeInfo3" />
+    </fragment>
+    <fragment
+        android:id="@+id/locationsFragment"
+        android:name="com.kipreev.aston_final_project.fragments.LocationsFragment"
+        android:label="fragment_locations"
+        tools:layout="@layout/fragment_locations" >
+        <action
+            android:id="@+id/action_locationsFragment2_to_locationInfo3"
+            app:destination="@id/locationInfo3" />
+    </fragment>
+    <fragment
+        android:id="@+id/locationInfo3"
+        android:name="com.kipreev.aston_final_project.fragments.LocationInfo"
+        android:label="fragment_location_info"
+        tools:layout="@layout/fragment_location_info" />
+    <fragment
+        android:id="@+id/mainFragment4"
+        android:name="com.kipreev.aston_final_project.fragments.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment4_to_charactersFragment"
+            app:destination="@id/charactersFragment" />
+        <action
+            android:id="@+id/action_mainFragment4_to_locationsFragment"
+            app:destination="@id/locationsFragment" />
+        <action
+            android:id="@+id/action_mainFragment4_to_episodesFragment"
+            app:destination="@id/episodesFragment" />
+    </fragment>
+</navigation>
