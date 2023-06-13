@@ -22,78 +22,55 @@
         android:focusable="true">
 
         <LinearLayout
-            android:id="@+id/item_card_character"
+            android:id="@+id/item_card_episode"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_margin = "16dp">
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/char_image"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:elevation="14dp"/>
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/char_name"
+                android:id="@+id/episode_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:layout_marginTop="6dp"
-                android:text="@string/char_name"
+                android:text="Earth"
                 android:textStyle="bold"
                 android:textSize="16sp"/>
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/char_species"
+                android:id="@+id/episode_air_date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:layout_marginTop="6dp"
-                android:text="@string/char_species"
+                android:text="Fsdfsf"
                 android:textStyle="bold"
                 android:textSize="16sp"/>
 
+
+
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/char_status"
+                android:id="@+id/episode_code"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:layout_marginTop="6dp"
-                android:text="@string/char_status"
+                android:text="Dimension C-137"
                 android:textStyle="bold"
                 android:textSize="16sp"/>
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/char_gender"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:layout_marginTop="6dp"
-                android:text="@string/char_gender"
-                android:textStyle="bold"
-                android:textSize="16sp"/>
+
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/char_created"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:layout_marginTop="6dp"
-                android:text="when"
-                android:textStyle="bold"
-                android:textSize="16sp"/>
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/char_id"
+                android:id="@+id/episode_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
                 android:text="@string/char_id"
                 android:textStyle="bold"
                 android:textSize="16sp"/>
-
-
 
 
         </LinearLayout>

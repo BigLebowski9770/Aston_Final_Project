@@ -3,14 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.EpisodesFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/yellow"
+    tools:context=".presentation.fragments.EpisodesFragment">
 
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcViewEpisodes"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="EPISODES"
-        android:textSize="64dp"
-        android:background="@color/gray"/>
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 </FrameLayout>
