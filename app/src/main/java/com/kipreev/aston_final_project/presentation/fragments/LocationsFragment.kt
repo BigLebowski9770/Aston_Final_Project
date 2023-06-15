@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import com.kipreev.aston_final_project.R
 import com.kipreev.aston_final_project.presentation.adapters.LocationAdapter
 import com.kipreev.aston_final_project.data.network.api.CharacterApi
 import com.kipreev.aston_final_project.data.network.models.locations.ResultLocation
@@ -61,6 +63,15 @@ class LocationsFragment : Fragment(), RVClickItem {
     }
 
     override fun onLocationItemClick(objects: ResultLocation) {
-        Log.d("OPOOOOOOOOOOOOOOOOOOOOO", "LOCATIONS ${objects.name}")
+        val controller = findNavController()
+        val bundle = Bundle()
+
+        bundle.putInt(KEY_FOR_ID_LOCATION, objects.id)
+
+        controller.navigate(R.id.action_locationsFragment2_to_locationInfo3, bundle)
+    }
+
+    companion object{
+        private const val KEY_FOR_ID_LOCATION = "id location"
     }
 }

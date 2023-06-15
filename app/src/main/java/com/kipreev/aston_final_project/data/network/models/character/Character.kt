@@ -1,11 +1,11 @@
 package com.kipreev.aston_final_project.data.network.models.character
 
 data class Character(
-    val created: String,
-    val episode: List<String>,
-    val gender: String,
-    val id: Int,
-    val image: String,
+    var created: String,
+    var episode: List<String>,
+    var gender: String,
+    var id: Int,
+    var image: String,
     val location: Location,
     val name: String,
     val origin: Origin,

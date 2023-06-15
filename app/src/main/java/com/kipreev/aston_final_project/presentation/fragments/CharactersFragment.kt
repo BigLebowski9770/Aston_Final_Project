@@ -66,12 +66,12 @@ class CharactersFragment : Fragment(), RVClickItem {
         val controller = findNavController()
         val bundle = Bundle()
 
-        bundle.putInt(KEY_FOR_ID, objects.id)
+        bundle.putInt(KEY_FOR_ID_CHAR, objects.id)
 
         controller.navigate(R.id.action_charactersFragment2_to_characterInfo2, bundle)
     }
 
     companion object{
-        private const val KEY_FOR_ID = "id"
+        private const val KEY_FOR_ID_CHAR = "id character"
     }
 }

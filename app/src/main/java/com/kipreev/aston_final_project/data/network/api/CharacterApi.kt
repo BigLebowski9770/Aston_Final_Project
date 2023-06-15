@@ -1,7 +1,9 @@
 package com.kipreev.aston_final_project.data.network.api
 
 import com.kipreev.aston_final_project.data.network.models.chars.Response
+import com.kipreev.aston_final_project.data.network.models.episode.SingleEpisode
 import com.kipreev.aston_final_project.data.network.models.episodes.EpisodesEpisode
+import com.kipreev.aston_final_project.data.network.models.location.SingleLocation
 import com.kipreev.aston_final_project.data.network.models.locations.LocationsLocation
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -19,5 +21,11 @@ interface CharacterApi {
 
     @GET("character/{id}")
     suspend fun getSingleCharacterById(@Path("id") id: Int): com.kipreev.aston_final_project.data.network.models.character.Character
+
+    @GET("location/{id}")
+    suspend fun getSingleLocationById(@Path("id") id: Int): SingleLocation
+
+    @GET("episode/{id}")
+    suspend fun getSingleEpisodeById(@Path("id") id: Int): SingleEpisode
 
 }

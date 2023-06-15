@@ -28,9 +28,9 @@
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/character_info_image"
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
+                android:layout_height="wrap_content"
                 android:layout_margin="4dp"
-                android:src="@drawable/logo_aston" />
+                 />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/character_info_name"
@@ -38,8 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
                 android:gravity="center"
-                android:text="Morty"
-                android:textSize="16sp"
+                android:textSize="32sp"
                 android:textStyle="bold" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -48,8 +47,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
                 android:gravity="center"
-                android:text="Alive"
-                android:textSize="16sp"
+                android:textSize="32sp"
                 android:textStyle="bold" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -58,8 +56,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
                 android:gravity="center"
-                android:text="Human"
-                android:textSize="16sp"
+                android:textSize="32sp"
                 android:textStyle="bold" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -68,8 +65,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
                 android:gravity="center"
-                android:text="Male"
-                android:textSize="16sp"
+                android:textSize="32sp"
                 android:textStyle="bold" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -78,8 +74,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
                 android:gravity="center"
-                android:text="02.03.1998"
-                android:textSize="16sp"
+                android:textSize="32sp"
                 android:textStyle="bold" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -88,8 +83,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
                 android:gravity="center"
-                android:text="Earth"
-                android:textSize="16sp"
+                android:textSize="32sp"
                 android:textStyle="bold" />
         </LinearLayout>
 

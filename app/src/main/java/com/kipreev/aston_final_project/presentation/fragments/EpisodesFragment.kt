@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import com.kipreev.aston_final_project.R
 import com.kipreev.aston_final_project.presentation.adapters.EpisodeAdapter
 import com.kipreev.aston_final_project.data.network.api.CharacterApi
 import com.kipreev.aston_final_project.data.network.models.episodes.ResultEpisode
@@ -58,11 +60,18 @@ class EpisodesFragment : Fragment(), RVClickItem {
                 adapter.submitList(list.results)
             }
         }
-
     }
 
     override fun onEpisodeItemClick(objects: ResultEpisode) {
-        Log.d("OPOOOOOOOOOOOOOOOOOOOOO", "EPISODE ${objects.name}")
+        val controller = findNavController()
+        val bundle = Bundle()
+
+        bundle.putInt(KEY_FOR_ID_EPISODE, objects.id)
+        controller.navigate(R.id.action_episodesFragment2_to_episodeInfo3, bundle)
+    }
+
+    companion object{
+        private const val KEY_FOR_ID_EPISODE = "id episode"
     }
 }
 
