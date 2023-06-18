@@ -6,7 +6,7 @@
     app:startDestination="@id/mainFragment4">
     <fragment
         android:id="@+id/charactersFragment"
-        android:name="com.kipreev.aston_final_project.presentation.fragments.CharactersFragment"
+        android:name="com.kipreev.aston_final_project.presentation.fragments.characters.CharactersFragment"
         android:label="fragment_characters"
         tools:layout="@layout/fragment_characters" >
         <action
@@ -15,17 +15,17 @@
     </fragment>
     <fragment
         android:id="@+id/episodeInfo3"
-        android:name="com.kipreev.aston_final_project.presentation.fragments.EpisodeInfo"
+        android:name="com.kipreev.aston_final_project.sil.presentation.fragments.episodes.EpisodeInfoFragment"
         android:label="fragment_episode_info"
         tools:layout="@layout/fragment_episode_info" />
     <fragment
         android:id="@+id/characterInfo2"
-        android:name="com.kipreev.aston_final_project.presentation.fragments.CharacterInfo"
+        android:name="com.kipreev.aston_final_project.presentation.fragments.characters.CharacterInfoFragment"
         android:label="fragment_character_info"
         tools:layout="@layout/fragment_character_info" />
     <fragment
         android:id="@+id/episodesFragment"
-        android:name="com.kipreev.aston_final_project.presentation.fragments.EpisodesFragment"
+        android:name="com.kipreev.aston_final_project.sil.presentation.fragments.episodes.EpisodesFragment"
         android:label="fragment_episodes"
         tools:layout="@layout/fragment_episodes" >
         <action
@@ -34,7 +34,7 @@
     </fragment>
     <fragment
         android:id="@+id/locationsFragment"
-        android:name="com.kipreev.aston_final_project.presentation.fragments.LocationsFragment"
+        android:name="com.kipreev.aston_final_project.sil.presentation.fragments.locations.LocationsFragment"
         android:label="fragment_locations"
         tools:layout="@layout/fragment_locations" >
         <action
@@ -43,7 +43,7 @@
     </fragment>
     <fragment
         android:id="@+id/locationInfo3"
-        android:name="com.kipreev.aston_final_project.presentation.fragments.LocationInfo"
+        android:name="com.kipreev.aston_final_project.sil.presentation.fragments.locations.LocationInfoFragment"
         android:label="fragment_location_info"
         tools:layout="@layout/fragment_location_info" />
     <fragment
