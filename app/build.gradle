@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -56,4 +57,9 @@ android {
         testImplementation 'junit:junit:4.13.2'
         androidTestImplementation 'androidx.test.ext:junit:1.1.5'
         androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+        kapt "com.google.dagger:dagger-compiler:2.43.2"
+        implementation "com.google.dagger:dagger:2.44.2"
+
+        implementation("com.github.kirich1409:viewbindingpropertydelegate:1.5.6")
     }
