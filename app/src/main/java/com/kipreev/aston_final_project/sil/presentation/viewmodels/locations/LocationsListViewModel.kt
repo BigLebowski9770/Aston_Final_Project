@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.kipreev.aston_final_project.data.network.models.locations.LocationsLocation
+import com.kipreev.aston_final_project.data.network.models.locations.ResultLocationDto
 import com.kipreev.aston_final_project.sil.domain.locations.GetAllLocationsUseCase
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -15,8 +15,8 @@ class LocationsListViewModel @Inject constructor(
     private val getAllLocationsUseCase: GetAllLocationsUseCase
 ) : ViewModel() {
 
-    private val _locationsList: MutableLiveData<LocationsLocation> = MutableLiveData()
-    val locationsList: LiveData<LocationsLocation> = _locationsList
+    private val _locationsList: MutableLiveData<List<ResultLocationDto>> = MutableLiveData()
+    val locationsList: LiveData<List<ResultLocationDto>> = _locationsList
 
     init {
         viewModelScope.launch {
@@ -30,8 +30,8 @@ class LocationsListViewModel @Inject constructor(
         }
     }
 
-    private fun goToNextScreen() {
-        val summerSmith = getAllLocationsUseCase.locationsList?.results?.find { it.name=="Summer Smith" }
-        //Todo допустим, отправляем эту модель куда-то еще
-    }
+//    private fun goToNextScreen() {
+//        val summerSmith = getAllLocationsUseCase.locationsList?.results?.find { it.name=="Summer Smith" }
+//        //Todo допустим, отправляем эту модель куда-то еще
+//    }
 }

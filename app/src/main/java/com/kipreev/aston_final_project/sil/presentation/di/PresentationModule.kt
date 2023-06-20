@@ -1,6 +1,6 @@
 package com.kipreev.aston_final_project.presentation.di
 
-import com.kipreev.aston_final_project.domain.characters.GetAllCharactersUseCase
+import com.kipreev.aston_final_project.sil.domain.characters.GetAllCharactersUseCase
 import com.kipreev.aston_final_project.domain.characters.GetCharacterInfoUseCase
 import com.kipreev.aston_final_project.presentation.viewmodels.characters.CharacterInfoViewModel
 import com.kipreev.aston_final_project.presentation.viewmodels.characters.CharactersListViewModel

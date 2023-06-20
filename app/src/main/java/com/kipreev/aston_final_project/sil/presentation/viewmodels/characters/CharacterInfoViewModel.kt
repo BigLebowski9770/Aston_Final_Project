@@ -18,8 +18,12 @@ class CharacterInfoViewModel @Inject constructor(
 
     fun getCharacterInfo(characterId: Int) {
         viewModelScope.launch {
-            val response = getCharacterInfoUseCase(characterId)
-            _charactersInfo.postValue(response)
+            try {
+                val response = getCharacterInfoUseCase(characterId)
+                _charactersInfo.postValue(response)
+            } catch (e:Exception){
+            }
+
         }
     }
 }

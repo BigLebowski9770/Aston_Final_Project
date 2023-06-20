@@ -8,15 +8,15 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.kipreev.aston_final_project.R
 import com.kipreev.aston_final_project.databinding.LocationItemBinding
-import com.kipreev.aston_final_project.data.network.models.locations.ResultLocation
+import com.kipreev.aston_final_project.data.network.models.locations.ResultLocationDto
 import com.kipreev.aston_final_project.presentation.fragments.RVClickItem
 
-class LocationAdapter(val listener: RVClickItem) : ListAdapter<ResultLocation, LocationAdapter.Holder>(Comparator()) {
+class LocationAdapter(val listener: RVClickItem) : ListAdapter<ResultLocationDto, LocationAdapter.Holder>(Comparator()) {
 
     class Holder(view: View) : RecyclerView.ViewHolder(view) {
         private val binding = LocationItemBinding.bind(view)
 
-        fun bind(location: ResultLocation, listener: RVClickItem) = with(binding) {
+        fun bind(location: ResultLocationDto, listener: RVClickItem) = with(binding) {
             locationName.text = location.name
             locationType.text = location.type
             locationDimension.text = location.dimension
@@ -28,12 +28,12 @@ class LocationAdapter(val listener: RVClickItem) : ListAdapter<ResultLocation, L
         }
     }
 
-    class Comparator : DiffUtil.ItemCallback<ResultLocation>() {
-        override fun areItemsTheSame(oldItem: ResultLocation, newItem: ResultLocation): Boolean {
+    class Comparator : DiffUtil.ItemCallback<ResultLocationDto>() {
+        override fun areItemsTheSame(oldItem: ResultLocationDto, newItem: ResultLocationDto): Boolean {
             return oldItem.id == newItem.id
         }
 
-        override fun areContentsTheSame(oldItem: ResultLocation, newItem: ResultLocation): Boolean {
+        override fun areContentsTheSame(oldItem: ResultLocationDto, newItem: ResultLocationDto): Boolean {
             return oldItem == newItem
         }
 

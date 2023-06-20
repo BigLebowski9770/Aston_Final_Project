@@ -26,7 +26,6 @@ class CharacterInfoFragment : Fragment(R.layout.fragment_character_info) {
         super.onViewCreated(view, savedInstanceState)
         initViewModel()
 
-//        characterId?.let(viewModel::getCharacterInfo)
         characterId?.let {
             viewModel.getCharacterInfo(it)
         }
@@ -34,6 +33,11 @@ class CharacterInfoFragment : Fragment(R.layout.fragment_character_info) {
         viewModel.charactersInfo.observe(viewLifecycleOwner) {
             bindUI(it)
         }
+
+        binding.characterInfoLocationName.setOnClickListener {
+
+        }
+
     }
 
     private fun bindUI(characterInfo: CharacterInfoUIModel) {
@@ -44,6 +48,8 @@ class CharacterInfoFragment : Fragment(R.layout.fragment_character_info) {
             characterInfoSpecies.text = characterInfo.species
             characterInfoGender.text = characterInfo.gender
             characterInfoCreated.text = characterInfo.created
+            characterInfoOriginName.text = characterInfo.origin.name
+            characterInfoLocationName.text = characterInfo.location.name
         }
     }
 

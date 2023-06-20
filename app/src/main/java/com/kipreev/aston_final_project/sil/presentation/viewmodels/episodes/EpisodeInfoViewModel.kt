@@ -18,8 +18,12 @@ class EpisodeInfoViewModel @Inject constructor(
 
     fun getEpisodeInfo(episodeId: Int) {
         viewModelScope.launch {
-            val response = getEpisodeInfoUseCase(episodeId)
-            _episodesInfo.postValue(response)
+            try {
+                val response = getEpisodeInfoUseCase(episodeId)
+                _episodesInfo.postValue(response)
+            } catch (exception: Exception) {
+
+            }
         }
     }
 }

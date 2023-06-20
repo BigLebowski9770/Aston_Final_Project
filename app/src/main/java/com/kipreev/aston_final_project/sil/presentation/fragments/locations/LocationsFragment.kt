@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.kipreev.aston_final_project.R
 import com.kipreev.aston_final_project.presentation.adapters.LocationAdapter
-import com.kipreev.aston_final_project.data.network.models.locations.ResultLocation
+import com.kipreev.aston_final_project.data.network.models.locations.ResultLocationDto
 import com.kipreev.aston_final_project.databinding.FragmentLocationsBinding
 import com.kipreev.aston_final_project.presentation.activities.MainActivity
 import com.kipreev.aston_final_project.presentation.fragments.RVClickItem
@@ -30,11 +30,11 @@ class LocationsFragment : Fragment(R.layout.fragment_locations), RVClickItem {
         binding.rcViewLocation.layoutManager = GridLayoutManager(context, 2)
         binding.rcViewLocation.adapter = adapter
         viewModel.locationsList.observe(viewLifecycleOwner) { response ->
-            adapter.submitList(response.results)
+            adapter.submitList(response)
         }
     }
 
-    override fun onLocationItemClick(objects: ResultLocation) {
+    override fun onLocationItemClick(objects: ResultLocationDto) {
         val controller = findNavController()
         val bundle = Bundle()
 

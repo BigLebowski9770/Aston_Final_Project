@@ -7,6 +7,8 @@ import javax.inject.Inject
 class GetEpisodeInfoUseCase  @Inject constructor(
     private val mainRepository: MainRepository
 ) {
-    suspend operator fun invoke(episodeId: Int): EpisodeInfoUIModel =
-        mainRepository.getSingleEpisodeById(episodeId).toUI()
+    suspend operator fun invoke(episodeId: Int): EpisodeInfoUIModel {
+        val localEpisode = mainRepository.getLocalEpisodeById(episodeId)
+        return localEpisode?.toUI() ?: mainRepository.getSingleEpisodeById(episodeId).toUI()
+    }
 }
