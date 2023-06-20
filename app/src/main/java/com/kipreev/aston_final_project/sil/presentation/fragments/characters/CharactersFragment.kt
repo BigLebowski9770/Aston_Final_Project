@@ -7,7 +7,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.kipreev.aston_final_project.R
-import com.kipreev.aston_final_project.data.network.models.chars.ResultCharacters
+import com.kipreev.aston_final_project.data.network.models.chars.ResultCharactersDto
 import com.kipreev.aston_final_project.databinding.FragmentCharactersBinding
 import com.kipreev.aston_final_project.presentation.activities.MainActivity
 import com.kipreev.aston_final_project.presentation.adapters.CharAdapter
@@ -29,12 +29,16 @@ class CharactersFragment : Fragment(R.layout.fragment_characters), RVClickItem {
         initViewModel()
         binding.rcViewChar.layoutManager = GridLayoutManager(context, 2)
         binding.rcViewChar.adapter = adapter
-        viewModel.charactersList.observe(viewLifecycleOwner) { response ->
-            adapter.submitList(response.results)
+        viewModel.charactersList.observe(viewLifecycleOwner) { results ->
+            adapter.submitList(results)
+
+            binding.swiperefresh.setOnRefreshListener {
+
+            }
         }
     }
 
-    override fun onCharItemClick(objects: ResultCharacters) {
+    override fun onCharItemClick(objects: ResultCharactersDto) {
         val controller = findNavController()
         val bundle = Bundle()
 
@@ -46,6 +50,7 @@ class CharactersFragment : Fragment(R.layout.fragment_characters), RVClickItem {
     private fun initViewModel() {
         viewModel = (activity as MainActivity).charactersListViewModel
     }
+
 
     companion object {
         const val KEY_FOR_ID_CHAR = "id character"

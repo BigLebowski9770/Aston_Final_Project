@@ -1,9 +1,9 @@
 package com.kipreev.aston_final_project.domain.characters
 
-import com.kipreev.aston_final_project.data.network.models.character.CharacterInfoResponse
+import com.kipreev.aston_final_project.data.network.models.chars.ResultCharactersDto
 import com.kipreev.aston_final_project.sil.presentation.fragments.characters.CharacterInfoUIModel
 
-fun CharacterInfoResponse.toUI() =
+fun ResultCharactersDto.toUI() =
     CharacterInfoUIModel(
         id = id,
         imageUrl = image,
@@ -11,5 +11,7 @@ fun CharacterInfoResponse.toUI() =
         status = status,
         species = species,
         gender = gender,
-        created = created
+        created = created,
+        location = locationDto,
+        origin = origin
     )

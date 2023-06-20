@@ -9,17 +9,17 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.kipreev.aston_final_project.R
 import com.kipreev.aston_final_project.databinding.CharacterItemBinding
-import com.kipreev.aston_final_project.data.network.models.chars.ResultCharacters
+import com.kipreev.aston_final_project.data.network.models.chars.ResultCharactersDto
 import com.kipreev.aston_final_project.presentation.fragments.RVClickItem
 
 class CharAdapter(val listener: RVClickItem) :
-    ListAdapter<ResultCharacters,
+    ListAdapter<ResultCharactersDto,
             CharAdapter.Holder>(Comparator()) {
 
     class Holder(view: View) : RecyclerView.ViewHolder(view) {
 
         private val binding = CharacterItemBinding.bind(view)
-        fun bind(character: ResultCharacters, listener: RVClickItem) = with(binding) {
+        fun bind(character: ResultCharactersDto, listener: RVClickItem) = with(binding) {
             charImage.load(character.image)
             charName.text = character.name
             charSpecies.text = character.species
@@ -35,18 +35,18 @@ class CharAdapter(val listener: RVClickItem) :
     }
 
     class Comparator
-        : DiffUtil.ItemCallback<ResultCharacters>() {
+        : DiffUtil.ItemCallback<ResultCharactersDto>() {
         override fun areItemsTheSame(
-            oldItem: ResultCharacters,
-            newItem: ResultCharacters
+            oldItem: ResultCharactersDto,
+            newItem: ResultCharactersDto
         ): Boolean {
             return oldItem.id == newItem.id
 
         }
 
         override fun areContentsTheSame(
-            oldItem: ResultCharacters,
-            newItem: ResultCharacters
+            oldItem: ResultCharactersDto,
+            newItem: ResultCharactersDto
         ): Boolean {
             return oldItem == newItem
         }

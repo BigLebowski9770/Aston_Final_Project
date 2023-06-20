@@ -18,8 +18,12 @@ class LocationInfoViewModel @Inject constructor(
 
     fun getLocationInfo(locationId: Int) {
         viewModelScope.launch {
-            val response = getLocationInfoUseCase(locationId)
-            _locationsInfo.postValue(response)
+            try {
+                val response = getLocationInfoUseCase(locationId)
+                _locationsInfo.postValue(response)
+            } catch (exception: Exception) {
+
+            }
         }
     }
 }

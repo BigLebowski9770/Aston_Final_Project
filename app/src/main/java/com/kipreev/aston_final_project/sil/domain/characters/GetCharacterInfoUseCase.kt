@@ -7,6 +7,13 @@ import javax.inject.Inject
 class GetCharacterInfoUseCase @Inject constructor(
     private val mainRepository: MainRepository
 ) {
-    suspend operator fun invoke(characterId: Int): CharacterInfoUIModel =
-        mainRepository.getSingleCharacterById(characterId).toUI()
+    suspend operator fun invoke(characterId: Int): CharacterInfoUIModel {
+        val localCharacter = mainRepository.getLocalCharacterById(characterId)
+        return localCharacter?.toUI() ?: mainRepository.getSingleCharacterById(characterId).toUI()
+    }
+
+//    fun getAllEpisodes(characterInfoUIModel: CharacterInfoUIModel){
+//        characterInfoUIModel.episode.map { it.substring(40, it.length).toInt() }
+//    }
 }
+
