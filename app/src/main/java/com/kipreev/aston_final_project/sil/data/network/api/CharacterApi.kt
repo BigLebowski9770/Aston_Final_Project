@@ -1,4 +1,4 @@
-package com.kipreev.aston_final_project.data.network.api
+package com.kipreev.aston_final_project.sil.data.network.api
 
 import com.kipreev.aston_final_project.data.network.models.chars.MainCharactesResponse
 import com.kipreev.aston_final_project.data.network.models.chars.ResultCharactersDto
@@ -8,17 +8,43 @@ import com.kipreev.aston_final_project.data.network.models.locations.MainLocatio
 import com.kipreev.aston_final_project.data.network.models.locations.ResultLocationDto
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface CharacterApi {
 
     @GET("character")
-    suspend fun getAllCharacters(): MainCharactesResponse
+    suspend fun getAllCharacters(
+    ): MainCharactesResponse
 
     @GET("location")
-    suspend fun getAllLocations(): MainLocationResponse
+    suspend fun getAllLocations(
+    ): MainLocationResponse
 
     @GET("episode")
-    suspend fun getAllEpisodes(): MainEpisodesResponse
+    suspend fun getAllEpisodes(
+    ): MainEpisodesResponse
+
+    @GET("episode")
+    suspend fun filterEpisodes(
+        @Query("name") name: String = "",
+        @Query("episode") status: String = "",
+    ): MainEpisodesResponse
+
+    @GET("character")
+    suspend fun filterCharacters(
+        @Query("name") name: String = "",
+        @Query("status") status: String = "",
+        @Query("species") species: String = "",
+        @Query("type") type: String = "",
+        @Query("gender") gender: String = "",
+    ): MainCharactesResponse
+
+    @GET("location")
+    suspend fun filterLocations(
+        @Query("name") name: String = "",
+        @Query("type") type: String = "",
+        @Query("dimension") dimension: String = "",
+    ): MainLocationResponse
 
     @GET("character/{id}")
     suspend fun getSingleCharacterById(@Path("id") id: Int): ResultCharactersDto

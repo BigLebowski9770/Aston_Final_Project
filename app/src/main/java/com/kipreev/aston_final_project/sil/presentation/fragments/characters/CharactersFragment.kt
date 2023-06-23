@@ -2,6 +2,7 @@ package com.kipreev.aston_final_project.presentation.fragments.characters
 
 import android.os.Bundle
 import android.view.View
+import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
@@ -27,13 +28,34 @@ class CharactersFragment : Fragment(R.layout.fragment_characters), RVClickItem {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initViewModel()
-        binding.rcViewChar.layoutManager = GridLayoutManager(context, 2)
-        binding.rcViewChar.adapter = adapter
-        viewModel.charactersList.observe(viewLifecycleOwner) { results ->
-            adapter.submitList(results)
+        with(binding) {
+            rcViewChar.layoutManager = GridLayoutManager(context, 2)
+            rcViewChar.adapter = adapter
+            viewModel.charactersList.observe(viewLifecycleOwner) { results ->
+                adapter.submitList(results)
+            }
+            swiperefresh.setOnRefreshListener {
+                viewModel.refreshContent()
+            }
+            viewModel.isRefreshing.observe(viewLifecycleOwner) {
+                swiperefresh.isRefreshing = it
 
-            binding.swiperefresh.setOnRefreshListener {
+            }
+            searchName.doOnTextChanged { text, _, _, _ ->
+                viewModel.updateSearchText(name = text.toString())
+            }
 
+            searchStatus.doOnTextChanged { text, _, _, _ ->
+                viewModel.updateSearchText(status = text.toString())
+            }
+            searchSpecies.doOnTextChanged { text, _, _, _ ->
+                viewModel.updateSearchText(species = text.toString())
+            }
+            searchType.doOnTextChanged { text, _, _, _ ->
+                viewModel.updateSearchText(type = text.toString())
+            }
+            searchGender.doOnTextChanged { text, _, _, _ ->
+                viewModel.updateSearchText(gender = text.toString())
             }
         }
     }

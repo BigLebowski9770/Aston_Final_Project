@@ -7,16 +7,24 @@
     android:background="@color/yellow"
     tools:context=".sil.presentation.fragments.episodes.EpisodesFragment">
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/search_string"
+    <EditText
+        android:id="@+id/search_name"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:hint="@string/search"
+        android:hint="@string/name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"/>
 
-    </androidx.appcompat.widget.AppCompatEditText>
+    <EditText
+        android:id="@+id/search_episode"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="@string/episode"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_name"/>
+
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swiperefresh"
@@ -25,7 +33,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search_string">
+        app:layout_constraintTop_toBottomOf="@id/search_episode">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rcViewEpisodes"
@@ -34,7 +42,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/search_string"/>
+            app:layout_constraintTop_toBottomOf="@id/search_episode"/>
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 

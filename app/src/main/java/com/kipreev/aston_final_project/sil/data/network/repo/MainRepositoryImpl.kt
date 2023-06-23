@@ -1,6 +1,6 @@
 package com.kipreev.aston_final_project.data.network.repo
 
-import com.kipreev.aston_final_project.data.network.api.CharacterApi
+import com.kipreev.aston_final_project.sil.data.network.api.CharacterApi
 import com.kipreev.aston_final_project.data.network.models.chars.MainCharactesResponse
 import com.kipreev.aston_final_project.data.network.models.chars.ResultCharactersDto
 import com.kipreev.aston_final_project.data.network.models.episodes.MainEpisodesResponse
@@ -10,6 +10,9 @@ import com.kipreev.aston_final_project.data.network.models.locations.ResultLocat
 import com.kipreev.aston_final_project.sil.data.database.CharactersDao
 import com.kipreev.aston_final_project.sil.data.database.EpisodesDao
 import com.kipreev.aston_final_project.sil.data.database.LocationsDao
+import com.kipreev.aston_final_project.sil.presentation.fragments.characters.CharacterFilterModel
+import com.kipreev.aston_final_project.sil.presentation.fragments.episodes.EpisodesFilterModel
+import com.kipreev.aston_final_project.sil.presentation.fragments.locations.LocationFilterModel
 import javax.inject.Inject
 
 class MainRepositoryImpl @Inject constructor(
@@ -42,11 +45,37 @@ class MainRepositoryImpl @Inject constructor(
     }
 
     override suspend fun getLocalLocationById(locationId: Int): ResultLocationDto? =
-         locationsDao.findLocation(locationId)
+        locationsDao.findLocation(locationId)
 
 
     override suspend fun getAllEpisodes(): MainEpisodesResponse {
         return api.getAllEpisodes()
+    }
+
+    override suspend fun filterEpisodes(episodesFilterModel: EpisodesFilterModel): List<ResultEpisodeDto> {
+        return api.filterEpisodes(
+            name = episodesFilterModel.name ?: "",
+            status = episodesFilterModel.episode ?: "",
+        ).results
+    }
+
+    override suspend fun filterCharacters(characterFilterModel: CharacterFilterModel): List<ResultCharactersDto> {
+        return api.filterCharacters(
+            name = characterFilterModel.name ?: "",
+            status = characterFilterModel.status ?: "",
+            species = characterFilterModel.species ?: "",
+            type = characterFilterModel.type ?: "",
+            gender = characterFilterModel.gender ?: ""
+        ).results
+    }
+
+    override suspend fun filterLocations(locationsFilterModel: LocationFilterModel): List<ResultLocationDto> {
+
+        return api.filterLocations(
+            name = locationsFilterModel.name ?: "",
+            type = locationsFilterModel.type ?: "",
+            dimension = locationsFilterModel.dimension ?: ""
+        ).results
     }
 
     override suspend fun saveAllEpisodes(list: List<ResultEpisodeDto>) {

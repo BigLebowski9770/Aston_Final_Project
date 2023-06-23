@@ -6,6 +6,9 @@ import com.kipreev.aston_final_project.data.network.models.episodes.MainEpisodes
 import com.kipreev.aston_final_project.data.network.models.episodes.ResultEpisodeDto
 import com.kipreev.aston_final_project.data.network.models.locations.MainLocationResponse
 import com.kipreev.aston_final_project.data.network.models.locations.ResultLocationDto
+import com.kipreev.aston_final_project.sil.presentation.fragments.characters.CharacterFilterModel
+import com.kipreev.aston_final_project.sil.presentation.fragments.episodes.EpisodesFilterModel
+import com.kipreev.aston_final_project.sil.presentation.fragments.locations.LocationFilterModel
 
 interface MainRepository {
 
@@ -16,7 +19,6 @@ interface MainRepository {
     suspend fun getLocalCharacterById(characterId: Int): ResultCharactersDto?
 
 
-
     suspend fun getAllLocations(): MainLocationResponse
 
     suspend fun saveAllLocations(list: List<ResultLocationDto>)
@@ -24,13 +26,17 @@ interface MainRepository {
     suspend fun getLocalLocationById(locationId: Int): ResultLocationDto?
 
 
-
     suspend fun getAllEpisodes(): MainEpisodesResponse
+
+    suspend fun filterEpisodes(episodesFilterModel: EpisodesFilterModel): List<ResultEpisodeDto>
+
+    suspend fun filterCharacters(characterFilterModel: CharacterFilterModel): List<ResultCharactersDto>
+
+    suspend fun filterLocations(locationsFilterModel: LocationFilterModel): List<ResultLocationDto>
 
     suspend fun saveAllEpisodes(list: List<ResultEpisodeDto>)
 
     suspend fun getLocalEpisodeById(episodeId: Int): ResultEpisodeDto?
-
 
 
     suspend fun getSingleCharacterById(id: Int): ResultCharactersDto

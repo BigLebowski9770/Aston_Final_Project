@@ -1,4 +1,4 @@
-package com.kipreev.aston_final_project.domain.di
+package com.kipreev.aston_final_project.sil.domain.di
 
 import com.kipreev.aston_final_project.data.network.repo.MainRepository
 import com.kipreev.aston_final_project.sil.domain.characters.GetAllCharactersUseCase

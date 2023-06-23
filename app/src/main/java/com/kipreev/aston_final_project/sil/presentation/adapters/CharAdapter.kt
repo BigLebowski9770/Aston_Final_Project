@@ -12,7 +12,7 @@ import com.kipreev.aston_final_project.databinding.CharacterItemBinding
 import com.kipreev.aston_final_project.data.network.models.chars.ResultCharactersDto
 import com.kipreev.aston_final_project.presentation.fragments.RVClickItem
 
-class CharAdapter(val listener: RVClickItem) :
+class CharAdapter(private val listener: RVClickItem) :
     ListAdapter<ResultCharactersDto,
             CharAdapter.Holder>(Comparator()) {
 

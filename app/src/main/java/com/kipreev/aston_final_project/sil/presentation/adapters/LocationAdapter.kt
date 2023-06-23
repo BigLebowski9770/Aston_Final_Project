@@ -11,7 +11,7 @@ import com.kipreev.aston_final_project.databinding.LocationItemBinding
 import com.kipreev.aston_final_project.data.network.models.locations.ResultLocationDto
 import com.kipreev.aston_final_project.presentation.fragments.RVClickItem
 
-class LocationAdapter(val listener: RVClickItem) : ListAdapter<ResultLocationDto, LocationAdapter.Holder>(Comparator()) {
+class LocationAdapter(private val listener: RVClickItem) : ListAdapter<ResultLocationDto, LocationAdapter.Holder>(Comparator()) {
 
     class Holder(view: View) : RecyclerView.ViewHolder(view) {
         private val binding = LocationItemBinding.bind(view)

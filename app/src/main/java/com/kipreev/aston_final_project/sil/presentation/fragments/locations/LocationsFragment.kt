@@ -2,6 +2,7 @@ package com.kipreev.aston_final_project.sil.presentation.fragments.locations
 
 import android.os.Bundle
 import android.view.View
+import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
@@ -27,10 +28,29 @@ class LocationsFragment : Fragment(R.layout.fragment_locations), RVClickItem {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initViewModel()
-        binding.rcViewLocation.layoutManager = GridLayoutManager(context, 2)
-        binding.rcViewLocation.adapter = adapter
-        viewModel.locationsList.observe(viewLifecycleOwner) { response ->
-            adapter.submitList(response)
+        with(binding) {
+           rcViewLocation.layoutManager = GridLayoutManager(context, 2)
+           rcViewLocation.adapter = adapter
+            viewModel.locationsList.observe(viewLifecycleOwner) { response ->
+                adapter.submitList(response)
+            }
+            swiperefresh.setOnRefreshListener {
+                viewModel.refreshContent()
+            }
+            viewModel.isRefreshing.observe(viewLifecycleOwner) {
+                swiperefresh.isRefreshing = it
+
+            }
+            searchName.doOnTextChanged { text, _, _, _ ->
+                viewModel.updateSearchText(name = text.toString())
+            }
+
+            searchType.doOnTextChanged { text, _, _, _ ->
+                viewModel.updateSearchText(type = text.toString())
+            }
+            searchDimension.doOnTextChanged { text, _, _, _ ->
+                viewModel.updateSearchText(dimension = text.toString())
+            }
         }
     }
 

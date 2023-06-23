@@ -2,6 +2,7 @@ package com.kipreev.aston_final_project.sil.presentation.fragments.episodes
 
 import android.os.Bundle
 import android.view.View
+import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
@@ -27,13 +28,30 @@ class EpisodesFragment : Fragment(R.layout.fragment_episodes), RVClickItem {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initViewModel()
-        binding.rcViewEpisodes.layoutManager = GridLayoutManager(context, 2)
-        binding.rcViewEpisodes.adapter = adapter
-        viewModel.episodesList.observe(viewLifecycleOwner) { results ->
-            adapter.submitList(results)
+        with(binding) {
 
-            binding.swiperefresh.setOnRefreshListener {
+            rcViewEpisodes.layoutManager = GridLayoutManager(context, 2)
+            rcViewEpisodes.adapter = adapter
+            viewModel.episodesList.observe(viewLifecycleOwner) { results ->
+                adapter.submitList(results)
 
+                swiperefresh.setOnRefreshListener {
+
+                }
+            }
+            swiperefresh.setOnRefreshListener {
+                viewModel.refreshContent()
+            }
+            viewModel.isRefreshing.observe(viewLifecycleOwner) {
+                swiperefresh.isRefreshing = it
+
+            }
+            searchName.doOnTextChanged { text, _, _, _ ->
+                viewModel.updateSearchText(name = text.toString())
+            }
+
+            searchEpisode.doOnTextChanged { text, _, _, _ ->
+                viewModel.updateSearchText(episode = text.toString())
             }
         }
     }

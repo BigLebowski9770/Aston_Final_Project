@@ -11,7 +11,7 @@ import com.kipreev.aston_final_project.databinding.EpisodesItemBinding
 import com.kipreev.aston_final_project.data.network.models.episodes.ResultEpisodeDto
 import com.kipreev.aston_final_project.presentation.fragments.RVClickItem
 
-class EpisodeAdapter(val listener: RVClickItem) :
+class EpisodeAdapter(private val listener: RVClickItem) :
     ListAdapter<ResultEpisodeDto, EpisodeAdapter.Holder>(
         Comparator()
     ) {

@@ -8,9 +8,15 @@
     <string name="char_status">Char status</string>
     <string name="char_gender">Char gender</string>
     <string name="char_id">1</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="choose_a_section">Choose a section</string>
     <string name="search">Search</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="name">По имени</string>
+    <string name="status">По статусу</string>
+    <string name="species">По особенностям</string>
+    <string name="type">По типу</string>
+    <string name="gender">По гендеру</string>
+    <string name="dimension">По направлению</string>
+    <string name="episode">По названию эпизода</string>
+
 </resources>

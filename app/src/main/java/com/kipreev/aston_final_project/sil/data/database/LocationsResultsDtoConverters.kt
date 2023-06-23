@@ -16,16 +16,20 @@ class LocationsResultsDtoConverters {
 
 class OriginDtoConverters {
     @TypeConverter
-    fun locationToJson(value: CharacterOriginResponse) = Gson().toJson(value)
+    fun originToJson(value: CharacterOriginResponse) = Gson().toJson(value)
 
     @TypeConverter
-    fun jsonToLocation(value: String) = Gson().fromJson(value, CharacterOriginResponse::class.java)
+    fun jsonToOrigin(value: String) = Gson().fromJson(value, CharacterOriginResponse::class.java)
 }
 
 class StringListConverters {
     @TypeConverter
-    fun locationToJson(value: List<String>) = Gson().toJson(value)
+    fun listStingsToJson(value: List<String>?): String = Gson().toJson(value) ?: ""
 
     @TypeConverter
-    fun jsonToLocation(value: String) = Gson().fromJson(value, Array<String>::class.java).asList()
+    fun jsonToListString(value: String?) = try {
+        Gson().fromJson(value, Array<String>::class.java).asList()
+    } catch (e: Exception) {
+        listOf()
+    }
 }

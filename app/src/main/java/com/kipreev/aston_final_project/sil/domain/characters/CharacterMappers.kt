@@ -1,4 +1,4 @@
-package com.kipreev.aston_final_project.domain.characters
+package com.kipreev.aston_final_project.sil.domain.characters
 
 import com.kipreev.aston_final_project.data.network.models.chars.ResultCharactersDto
 import com.kipreev.aston_final_project.sil.presentation.fragments.characters.CharacterInfoUIModel

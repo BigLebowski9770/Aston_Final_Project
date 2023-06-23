@@ -7,17 +7,32 @@
     android:background="@color/yellow"
     tools:context=".sil.presentation.fragments.locations.LocationsFragment">
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/search_string"
+    <EditText
+        android:id="@+id/search_name"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:hint="@string/search"
+        android:hint="@string/name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"/>
 
-    </androidx.appcompat.widget.AppCompatEditText>
+    <EditText
+        android:id="@+id/search_type"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="@string/type"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_name"/>
 
+    <EditText
+        android:id="@+id/search_dimension"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="@string/dimension"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_type"/>
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swiperefresh"
@@ -26,7 +41,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search_string">
+        app:layout_constraintTop_toBottomOf="@id/search_dimension">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rcViewLocation"
@@ -35,7 +50,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/search_string"/>
+            app:layout_constraintTop_toBottomOf="@id/search_dimension"/>
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 

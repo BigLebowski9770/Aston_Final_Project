@@ -2,7 +2,7 @@ package com.kipreev.aston_final_project.data.network.di
 
 import android.content.Context
 import androidx.room.Room
-import com.kipreev.aston_final_project.data.network.api.CharacterApi
+import com.kipreev.aston_final_project.sil.data.network.api.CharacterApi
 import com.kipreev.aston_final_project.data.network.repo.MainRepository
 import com.kipreev.aston_final_project.data.network.repo.MainRepositoryImpl
 import com.kipreev.aston_final_project.sil.data.database.AstonDatabase

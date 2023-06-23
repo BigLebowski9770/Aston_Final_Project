@@ -31,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
                 android:gravity="center"
-                android:textSize="32sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -40,7 +40,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
                 android:gravity="center"
-                android:textSize="32sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
 
@@ -50,7 +50,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
                 android:gravity="center"
-                android:textSize="32sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -59,7 +59,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
                 android:gravity="center"
-                android:textSize="32sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
